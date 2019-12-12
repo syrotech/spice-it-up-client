@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">Spice It Up</h1>
+    <div id="message"></div>
+    <!-- <p> Instruction: A Childhood Classic! (add as finishing touch)-->
+
+    <!-- AUTHENTICATION FORMS -Sign up, Change PW, Sign In/Out-->
+    <section class="pre-auth-forms">
+      <h3>Sign Up</h3>
+      <form id="sign-up">
+        <input type="email" name="credentials[email]" placeholder="your@email.here">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+        <!-- does it have to be type="text" or can it be type="email"? -->
+        <!-- does it have to be value like in the API notes, or can it be placeholder? -->
+        <button class="btn btn-primary">Submit</button>
+      </form>
+      <h3>Sign In</h3>
+      <form id="sign-in">
+        <input type="email" name="credentials[email]" placeholder="your@email.here">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+
+    <!-- Post-Auth-Forms: with 'Change Password' and 'Sign Out' will
+take the place of the Sign-up and Sign-in once they are filled in -->
+    <section class="post-auth-forms">
+      <h3>Change Password</h3>
+      <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="current password">
+        <input type="password" name="passwords[new]" placeholder="new password">
+        <!-- can i keep placeholder? not in notes, but I was wondering if I could? -->
+        <button class="btn btn-primary">Submit</button>
+      </form>
+
+      <h3>Sign Out</h3>
+      <form id="sign-out">
+        <button class="btn btn-danger">Log out</button>
+      </form>
+    </section>
+  </header>
+
+</body>
+
 </html>

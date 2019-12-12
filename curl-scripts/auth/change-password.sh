@@ -7,8 +7,8 @@ curl "https://young-beach-16870.herokuapp.com/change-password" \
   --header "Content-Type: application/json" \
   --data '{
     "passwords": {
-      "old": "'"${OLDPW}"'",
-      "new": "'"${NEWPW}"'"
+      "old": "'"${OLDPASSWORD}"'",
+      "new": "'"${NEWPASSWORD}"'"
     }
   }'
 

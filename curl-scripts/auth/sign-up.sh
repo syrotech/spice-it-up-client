@@ -8,8 +8,8 @@ curl "https://young-beach-16870.herokuapp.com/sign-up" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"${PW}"'",
-      "password_confirmation": "'"${PW}"'"
+      "password": "'"${PASSWORD}"'",
+      "password_confirmation": "'"${PASSWORD}"'"
     }
   }'
 
