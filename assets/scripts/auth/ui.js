@@ -63,7 +63,7 @@ const onSignOutSuccess = () => {
   store.user = {}
   $('.post-auth-forms').hide()
   $('.pre-auth-forms').show()
-  $('.game-table').hide()
+  $('.spice-options').hide()
 }
 
 const onSignOutFailure = () => {

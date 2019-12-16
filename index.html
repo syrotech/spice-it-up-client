@@ -40,7 +40,7 @@
 
     <!-- Post-Auth-Forms: with 'Change Password' and 'Sign Out' will
 take the place of the Sign-up and Sign-in once they are filled in -->
-    <section class="post-auth-forms">
+    <!-- <section class="post-auth-forms"> -->
       <h3>Change Password</h3>
       <form id="change-password">
         <input type="password" name="passwords[old]" placeholder="current password">
@@ -53,8 +53,50 @@ take the place of the Sign-up and Sign-in once they are filled in -->
       <form id="sign-out">
         <button class="btn btn-danger">Log out</button>
       </form>
-    </section>
+    <!-- </section> -->
   </header>
+
+<section class='spice-options'>
+        <form class='spices'>
+          <div class="form-group">
+            <input type="text" name="spice[id]" id="spice-id" placeholder="Resource ID Here">
+          </div>
+          <button type="submit" class="btn btn-primary">Get All Spices</button>
+        </form>
+        <div id="spice-display"></div>
+
+        <form class='delete-spice'>
+          <div class="form-group">
+            <input type="text" name="spice[id]" placeholder="Delete Resource ID Here">
+          </div>
+          <button type="submit" class="btn btn-primary">Delete Spice</button>
+        </form>
+
+        <form class='update-spice'>
+          <div class="form-group">
+            <input type="text" name="spice[id]" placeholder="ID">
+            <input type="text" name="spice[name]" placeholder="Name">
+            <input type="text" name="spice[origin]" placeholder="Origin">
+            <input type="text" name="spice[culinary_use]" placeholder="Culinary Use">
+            <input type="text" name="spice[weight]" placeholder="Weight">
+            <input type="text" name="spice[price]" placeholder="Price">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Spice</button>
+        </form>
+
+        <form class='create-spice'>
+          <div class="form-group">
+            <input type="text" name="spice[id]" placeholder="ID">
+            <input type="text" name="spice[name]" placeholder="Name">
+            <input type="text" name="spice[origin]" placeholder="Origin">
+            <input type="text" name="spice[culinary_use]" placeholder="Culinary Use">
+            <input type="text" name="spice[weight]" placeholder="Weight">
+            <input type="text" name="spice[price]" placeholder="Price">
+          </div>
+          <button type="submit" class="btn btn-primary">Create Spice</button>
+        </form>
+</section>
+
 
 </body>
 

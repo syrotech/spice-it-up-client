@@ -44,9 +44,6 @@ const onSignOut = event => {
     .catch(ui.onSignOutFailure)
 }
 
-// const onRestart = event => {
-
-// }
 
 const addHandlers = event => {
   $('#sign-up').on('submit', onSignUp)
