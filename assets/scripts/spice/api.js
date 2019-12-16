@@ -6,7 +6,7 @@ const store = require('../store')
 
 const index = () => {
   return $.ajax({
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/spices',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`

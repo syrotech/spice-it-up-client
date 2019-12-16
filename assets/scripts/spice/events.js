@@ -4,12 +4,12 @@ const api = require('./api.js')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
-
 // GET INDEX / GET ALL SPICES
 const onGetSpices = function (event) {
+  event.preventDefault()
   api
     .index()
-    .then(ui.getSuccess)
+    .then(ui.indexSuccess)
     .catch(ui.getFailure)
   console.log('Works')
 }
@@ -47,10 +47,10 @@ const onCreateSpice = function (event) {
 }
 
 const addHandlers = event => {
-  $('#spices').on('click', onGetSpices)
+  $('.spices').on('submit', onGetSpices)
   // $('#delete-spice').on('click', onDeleteSpice)
   // $('#update-spice').on('click', onUpdateSpice)
-  $('#create-spice').on('click', onCreateSpice)
+  $('.create-spice').on('submit', onCreateSpice)
 }
 
 module.exports = {
