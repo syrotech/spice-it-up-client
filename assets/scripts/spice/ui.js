@@ -18,14 +18,13 @@ const onFailure = message => {
   $('form').trigger('reset')
 }
 
-// const onDeleteSuccess = function() {
-//   console.log('Spice was successfully deleted.')
-// }
+const deleteSuccess = function () {
+  console.log('Spice was successfully deleted.')
+}
 //
 // const onUpdateSuccess = function() {
 //   console.log('Spice was successfully Updated.')
 // }
-
 
 // GET SPICE INDEX
 const indexSuccess = function (responseData) {
@@ -60,8 +59,7 @@ module.exports = {
   onSuccess,
   onFailure,
   indexSuccess,
-  // onDeleteSuccess,
-  // onUpdateSuccess,
+  deleteSuccess,
   createSuccess,
   createFailure
 }

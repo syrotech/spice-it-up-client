@@ -21,12 +21,15 @@ const index = () => {
 //   });
 // };
 //
-// const destroy = function(id) {
-//   return $.ajax({
-//     url: app.host + '/spices/' + id,
-//     method: 'DELETE',
-//   });
-// };
+const destroy = function (id) {
+  return $.ajax({
+    url: config.api + '/spices/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
 //
 // const update = function(data) {
 //   return $.ajax({
@@ -50,7 +53,7 @@ const create = function (formData) {
 module.exports = {
   index,
   // show,
-  // destroy,
+  destroy,
   // update,
   create
 }

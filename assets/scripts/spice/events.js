@@ -10,21 +10,20 @@ const onGetSpices = function (event) {
   api
     .index()
     .then(ui.indexSuccess)
-    .catch(ui.getFailure)
+    .catch(ui.onFailure)
   console.log('Works')
 }
 
 //
 // // DELETE SPICE / DELETE ONE SPICE
-// const onDeleteSpice = function(event) {
-//   event.preventDefault()
-//
-//
-//   let data = getFormFields(event.target)
-//   spicesApi.destroy(data.spice.id)
-//     .then(spicesUi.onDeleteSuccess)
-//     .catch(spicesUi.onError)
-// }
+const onDeleteSpice = function (event) {
+  event.preventDefault()
+  const formData = $(event.target).data('id')
+  // const formData = getFormFields(event.target)
+  api.destroy(formData)
+    .then(ui.deleteSuccess)
+    .catch(ui.onFailure)
+}
 //
 // // UPDATE SPICE/ UPDATE ONE SPICE
 //
@@ -48,7 +47,7 @@ const onCreateSpice = function (event) {
 
 const addHandlers = event => {
   $('.spices').on('submit', onGetSpices)
-  // $('#delete-spice').on('click', onDeleteSpice)
+  $('.delete-spice').on('submit', onDeleteSpice)
   // $('#update-spice').on('click', onUpdateSpice)
   $('.create-spice').on('submit', onCreateSpice)
 }
