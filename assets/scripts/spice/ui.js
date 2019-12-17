@@ -2,6 +2,7 @@
 
 const store = require('../store')
 
+// Refactored onSuccess Message for all Requests
 const onSuccess = message => {
   $('#message')
     .removeClass('failure')
@@ -10,6 +11,7 @@ const onSuccess = message => {
   $('form').trigger('reset')
 }
 
+// Refactored onFailure Message for all Requests
 const onFailure = message => {
   $('#message')
     .removeClass('success')
@@ -18,15 +20,19 @@ const onFailure = message => {
   $('form').trigger('reset')
 }
 
-const deleteSuccess = function () {
-  console.log('Spice was successfully deleted.')
+// CREATE A SPICE SUCCESS
+const createSuccess = function (formData) {
+  onSuccess('You created a spice!')
+  console.log(formData.spice)
+  store.spice = formData.spice
 }
-//
-// const onUpdateSuccess = function() {
-//   console.log('Spice was successfully Updated.')
-// }
 
-// GET SPICE INDEX
+// CREATE A SPICE FAILURE
+const createFailure = () => {
+  onFailure('Error-please try again!')
+}
+
+// GET SPICE INDEX SUCESS
 const indexSuccess = function (responseData) {
   console.log(responseData)
   // console.log('data is ' + data)
@@ -44,22 +50,16 @@ const indexSuccess = function (responseData) {
   })
 }
 
-// CREATE A SPICE
-const createSuccess = function (formData) {
-  onSuccess('You created a spice!')
-  console.log(formData.spice)
-  store.spice = formData.spice
-}
-
-const createFailure = () => {
-  onFailure('Error-please try again!')
+// DELETE SPICE SUCCESS
+const deleteSuccess = function () {
+  console.log('Spice was successfully deleted.')
 }
 
 module.exports = {
   onSuccess,
   onFailure,
-  indexSuccess,
-  deleteSuccess,
   createSuccess,
-  createFailure
+  createFailure,
+  indexSuccess,
+  deleteSuccess
 }

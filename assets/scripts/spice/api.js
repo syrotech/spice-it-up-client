@@ -4,41 +4,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = () => {
-  return $.ajax({
-    url: config.apiUrl + '/spices',
-    method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    }
-  })
-}
-//
-// const show = function(id) {
-//   return $.ajax({
-//     url: app.host + '/spices/' + id,
-//     method: 'GET',
-//   });
-// };
-//
-const destroy = function (id) {
-  return $.ajax({
-    url: config.api + '/spices/' + id,
-    method: 'DELETE',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    }
-  })
-}
-//
-// const update = function(data) {
-//   return $.ajax({
-//     url: app.host + '/spices/' + data.spice.id,
-//     method: 'PATCH',
-//     data,
-//   });
-// };
-
+// CREATE SPICE API
 const create = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/spices',
@@ -50,10 +16,41 @@ const create = function (formData) {
   })
 }
 
+// READ INDEX / GET ALL SPICES API
+const index = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/spices',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
+// UPDATE A SPICE API
+const update = function (formData, id) {
+  return $.ajax({
+    url: app.host + '/spices/' + data.spice.id,
+    method: 'PATCH',
+    data,
+  })
+}
+
+// DESTROY A SPICE API
+const destroy = function (id) {
+  console.log('Works')
+  return $.ajax({
+    url: config.apiUrl + '/spices/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
+  create,
   index,
-  // show,
-  destroy,
-  // update,
-  create
+  update,
+  destroy
 }
