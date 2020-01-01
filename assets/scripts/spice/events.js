@@ -8,7 +8,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreateSpice = function (event) {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(Object.keys(formData))
+  // console.log(Object.keys(formData))
   if (formData.spice.name.length === 0) {
     ui.createSpiceFailure()
   } else {
@@ -29,7 +29,7 @@ const onGetSpices = function (event) {
     .index()
     .then(ui.indexSuccess)
     .catch(ui.indexFailure)
-  console.log('Works')
+  // console.log('Works')
 }
 
 // ON UPDATED SPICE LIST -- RETURNS UPDATED SPICE LIST BUT REALLY THE ONLY DIFFERENCE IS THE MESSAGES FROM ONGETSPICES
@@ -39,7 +39,7 @@ const onUpdateSpices = function (event) {
     .index()
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
-  console.log('Works')
+  // console.log('Works')
 }
 
 // UPDATE SPICE/ UPDATE ONE SPICE

@@ -41,7 +41,7 @@ const update = function (formData, id) {
 
 // DESTROY A SPICE API
 const destroy = function (id) {
-  console.log('Works')
+  // console.log('Works')
   return $.ajax({
     url: config.apiUrl + '/spices/' + id,
     method: 'DELETE',

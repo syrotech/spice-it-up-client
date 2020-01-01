@@ -23,7 +23,7 @@ const onFailure = message => {
 // CREATE A SPICE SUCCESS
 const createSpiceSuccess = function (formData) {
   onSuccess('You created a spice!')
-  console.log(formData.spice)
+  // // console.log(formData.spice)
   store.spice = formData.spice
   $('form').trigger('reset')
 }
@@ -31,14 +31,15 @@ const createSpiceSuccess = function (formData) {
 // CREATE A SPICE FAILURE
 const createSpiceFailure = () => {
   onFailure('Error-please try again! You must submit at least a name value.')
+  onFailure('Error-please try again! You must submit at least a name value.')
   $('form').trigger('reset')
 }
 
 // GET SPICE INDEX SUCESS
 const indexSuccess = function (responseData) {
   onSuccess('Here is the spice list!')
-  console.log(responseData)
-  // console.log('data is ' + data)
+  // // console.log(responseData)
+  // // // console.log('data is ' + data)
   $('#spice-display').html('')
   responseData.spices.forEach(spice => {
     // build HTML element with data
