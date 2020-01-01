@@ -30,9 +30,12 @@ const index = function (data) {
 // UPDATE A SPICE API
 const update = function (formData, id) {
   return $.ajax({
-    url: app.host + '/spices/' + data.spice.id,
+    url: config.apiUrl + '/spices/' + id,
     method: 'PATCH',
-    data,
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data: formData
   })
 }
 

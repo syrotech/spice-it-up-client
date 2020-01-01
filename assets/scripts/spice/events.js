@@ -8,10 +8,19 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreateSpice = function (event) {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  api.create(formData)
-    .then(ui.createSpiceSuccess)
-    .catch(ui.createSpiceFailure)
+  console.log(Object.keys(formData))
+  if (formData.spice.name.length === 0) {
+    ui.createSpiceFailure()
+  } else {
+    api.create(formData)
+      .then(ui.createSpiceSuccess)
+      .catch(ui.createSpiceFailure)
+  }
 }
+//   api.create(formData)
+//     .then(ui.createSpiceSuccess)
+//     .catch(ui.createSpiceFailure)
+// }
 
 // READ INDEX / GET ALL SPICES
 const onGetSpices = function (event) {
@@ -19,34 +28,48 @@ const onGetSpices = function (event) {
   api
     .index()
     .then(ui.indexSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.indexFailure)
+  console.log('Works')
+}
+
+// ON UPDATED SPICE LIST -- RETURNS UPDATED SPICE LIST BUT REALLY THE ONLY DIFFERENCE IS THE MESSAGES FROM ONGETSPICES
+const onUpdateSpices = function (event) {
+  event.preventDefault()
+  api
+    .index()
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
   console.log('Works')
 }
 
 // UPDATE SPICE/ UPDATE ONE SPICE
 const onUpdateSpice = function (event) {
   event.preventDefault()
-  const formData = getFormFields(event.target)
-  api.update(formData)
-    .then(ui.onUpdateSuccess)
-    .catch(ui.onFailure)
+  const form = event.target
+  const formData = getFormFields(form)
+  const spiceId = formData.spice.id
+
+  api.update(formData, spiceId)
+    .then(function () {
+      onUpdateSpices(event)
+    })
 }
 
 // DELETE SPICE / DELETE ONE SPICE
 const onDeleteSpice = function (event) {
   event.preventDefault()
-  // const formData = $(event.target).data('id')
-  const formData = getFormFields(event.target)
+  const form = event.target
+  const formData = getFormFields(form)
   api.destroy(formData.spice.id)
-    .then(ui.deleteSuccess)
-    .catch(ui.onFailure)
+    .then(ui.deleteSpiceSuccess)
+    .catch(ui.deleteSpiceFailure)
 }
 
 const addHandlers = event => {
   $('.create-spice').on('submit', onCreateSpice)
   $('.spices').on('submit', onGetSpices)
   $('.delete-spice').on('submit', onDeleteSpice)
-  $('.update-spice').on('click', onUpdateSpice)
+  $('.update-spice').on('submit', onUpdateSpice)
 }
 
 module.exports = {

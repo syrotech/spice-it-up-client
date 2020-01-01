@@ -21,19 +21,22 @@ const onFailure = message => {
 }
 
 // CREATE A SPICE SUCCESS
-const createSuccess = function (formData) {
+const createSpiceSuccess = function (formData) {
   onSuccess('You created a spice!')
   console.log(formData.spice)
   store.spice = formData.spice
+  $('form').trigger('reset')
 }
 
 // CREATE A SPICE FAILURE
-const createFailure = () => {
-  onFailure('Error-please try again!')
+const createSpiceFailure = () => {
+  onFailure('Error-please try again! You must submit at least a name value.')
+  $('form').trigger('reset')
 }
 
 // GET SPICE INDEX SUCESS
 const indexSuccess = function (responseData) {
+  onSuccess('Here is the spice list!')
   console.log(responseData)
   // console.log('data is ' + data)
   $('#spice-display').html('')
@@ -50,16 +53,44 @@ const indexSuccess = function (responseData) {
   })
 }
 
+// GET SPICE INDEX FAILURE
+const indexFailure = () => {
+  onFailure('Error-please try again!')
+  $('form').trigger('reset')
+}
+
+// UPDATE SPICE SUCCESS
+const onUpdateSuccess = function () {
+  onSuccess('Spice was successfully updated.')
+  $('form').trigger('reset')
+}
+// UPDATE SPICE FAILURE
+const onUpdateFailure = () => {
+  onFailure('Error-please try again!')
+  $('form').trigger('reset')
+}
+
 // DELETE SPICE SUCCESS
-const deleteSuccess = function () {
-  console.log('Spice was successfully deleted.')
+const deleteSpiceSuccess = function () {
+  onSuccess('Spice was successfully deleted.')
+  $('form').trigger('reset')
+}
+
+// DELETE SPICE FAILURE
+const deleteSpiceFailure = () => {
+  onFailure('Error-please try again!')
+  $('form').trigger('reset')
 }
 
 module.exports = {
   onSuccess,
   onFailure,
-  createSuccess,
-  createFailure,
+  createSpiceSuccess,
+  createSpiceFailure,
   indexSuccess,
-  deleteSuccess
+  indexFailure,
+  onUpdateSuccess,
+  onUpdateFailure,
+  deleteSpiceSuccess,
+  deleteSpiceFailure
 }

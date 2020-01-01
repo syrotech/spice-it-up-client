@@ -1,17 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
-// Title
-h1 {
-  text-align: justify;
-  margin-top: 50px;
-  margin-left: 50px;
-}
+// // // Title
+// h1 {
+//   text-align: justify;
+//   margin-top: 50px;
+//   margin-left: 50px;
+// }
+//
+// header {
+//   margin-top: 10%;
+//   margin-left: 30%;
+//   margin-right: 30%;
+//   padding: 5%;
+//   background: rgb(210, 105, 30);
+//   border-radius: 20px;
+//   border: solid 3px grey;
+// }
 
-header {
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding: 5%;
-  background: rgb(210, 105, 30);
-  border-radius: 20px;
-  border: solid 3px grey;
+
+.post-auth-forms {
+  display: none;
 }
