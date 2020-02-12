@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Spice It Up!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+    <h1 id="title">Spice It Up!</h1>
+    <div id="message">The Personalized Spice Catalog Application</div>
+    <!-- <p> Instruction: A Childhood Classic! (add as finishing touch)-->
+
+    <!-- AUTHENTICATION FORMS -Sign up, Change PW, Sign In/Out-->
+    <section class="pre-auth-forms">
+      <h3>Sign Up</h3>
+      <form id="sign-up">
+        <input type="email" name="credentials[email]" placeholder="your@email.here">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+        <!-- does it have to be type="text" or can it be type="email"? -->
+        <!-- does it have to be value like in the API notes, or can it be placeholder? -->
+        <button class="btn btn-warning">Submit</button>
+      </form>
+      <h3>Sign In</h3>
+      <form id="sign-in">
+        <input type="email" name="credentials[email]" placeholder="your@email.here">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <button class="btn btn-warning">Submit</button>
+      </form>
+    </section>
+
+    <!-- Post-Auth-Forms: with 'Change Password' and 'Sign Out' will
+take the place of the Sign-up and Sign-in once they are filled in -->
+    <div class="post-auth-forms post-auth-info">
+      <h3>Change Password</h3>
+      <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="current password">
+        <input type="password" name="passwords[new]" placeholder="new password">
+        <!-- can i keep placeholder? not in notes, but I was wondering if I could? -->
+        <button class="btn btn-warning">Submit</button>
+      </form>
+
+      <h3>Sign Out</h3>
+      <form id="sign-out">
+        <button class="btn btn-danger">Log out</button>
+      </form>
+    </div>
+
+<div class="post-auth-forms">
+  <h4 class="spice-catalog"> Your Spice Catalog </h4>
+  <section class='spice-options'>
+
+    <form class='create-spice'>
+      <div class="form-group">
+        <input type="text" name="spice[name]" placeholder="Name of Spice">
+        <input type="text" name="spice[origin]" placeholder="Country of Origin">
+        <input type="text" name="spice[culinary_use]" placeholder="culinary-use">
+        <input type="text" name="spice[imageurl]" placeholder="Imageurl">
+        <input type="text" name="spice[price]" placeholder="Price">
+        <input type="text" name="spice[weight]" placeholder="Weight">
+        <input type="text" name="spice[substitution]" placeholder="Best Substitutions">
+      </div>
+      <button type="submit" class="btn btn-warning">Create Spice</button>
+    </form>
+
+    <!-- <form class='create-spice'>
+      <div class="form-row form-group>
+        <div class="form-group col-md-6">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" name="spice[name]" placeholder="Name" id="Name">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="origin">Country of Origin</label>
+          <input type="text" class="form-control" name="spice[origin]" placeholder="Country of Origin" id="origin">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="culinary_use">Culinary Use</label>
+        <input type="text" class="form-control" name="spice[culinary_use]" placeholder="Culinary Use: Cookies, Chili, etc." id="culinary_use">
+      </div>
+
+      <div class="form-group">
+        <label for="imageurl">imgurl</label>
+        <input type="text" class="form-control" name="spice[imageurl]" placeholder="https://image-of-spice.png" id="imageurl">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputZip">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form> -->
+
+    <form class='spices'>
+      <button type="submit" class="btn btn-warning">Get All Spices</button>
+    </form>
+    <div class="container">
+      <div class="row" id="spice-display"></div>
+    </div>
+
+    <form class='delete-spice'>
+      <div class="form-group">
+        <input type="text" name="spice[id]" placeholder="Delete Spice by ID">
+      </div>
+      <button type="submit" class="btn btn-warning">Delete Spice</button>
+    </form>
+
+    <form class='update-spice'>
+      <div class="form-group">
+        <input type="text" name="spice[id]" placeholder="ID">
+        <input type="text" name="spice[name]" placeholder="Name">
+        <input type="text" name="spice[origin]" placeholder="Origin">
+        <input type="text" name="spice[culinary_use]" placeholder="Culinary Use">
+        <input type="text" name="spice[price]" placeholder="Price">
+        <input type="text" name="spice[weight]" placeholder="Weight">
+        <input type="text" name="spice[imageurl]" placeholder="Imageurl">
+        <input type="text" name="spice[substitution]" placeholder="Best Substitutions">
+      </div>
+      <button type="submit" class="btn btn-warning">Update Spice</button>
+    </form>
+
+  </section>
+</div>
+
+
+</body>
+
+</html>
