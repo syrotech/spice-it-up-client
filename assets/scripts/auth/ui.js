@@ -63,7 +63,6 @@ const onSignOutSuccess = () => {
   store.user = {}
   $('.post-auth-forms').hide()
   $('.pre-auth-forms').show()
-  $('.post-auth-forms').hide()
 }
 
 const onSignOutFailure = () => {

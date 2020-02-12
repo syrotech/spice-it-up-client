@@ -1,0 +1,24 @@
+<h4>Spices</h4>
+{{#each spices as |spices|}}
+  <section data-id="{{spice.id}}">
+    <p><span class="list">Name:</span> {{spice.name}}</p>
+    <p><span class="list">Country of Origin:</span> {{spice.origin}}</p>
+    <p><span class="list">Culinary Use:</span> {{spice.culinary_use}}</p>
+    <p><span class="list">Price:</span> {{spice.price}}</p>
+    <p><span class="list">Weight:</span> {{spice.weight}}</p>
+    <p><span class="list">ImageURL</span> {{spice.imageurl}}</p>
+    <!-- <img src="../../../img/edit.png" alt="edit"> -->
+    <form class="update-spice" data-id="{{spice.id}}">
+      <input type="text" name="spice[name]" class="inputs" placeholder="Name of Spice" required>
+      <input type="text" name="spice[origin]" class="inputs" placeholder="Country of Origin" required>
+      <input type="text" name="spice[culinary_use]" class="inputs" placeholder="Culinary Use" required>
+      <input type="text" name="spice[price]" class="inputs" placeholder="Price per Lb" required>
+      <input type="text" name="spice[weight]" class="inputs" placeholder="Weight in Lbs" required>
+      <input type="text" name="spice[imageurl]" class="inputs" placeholder="URL of Image" required>
+      <button class="btn btn-info">Update</button>
+    </form>
+    <button class="btn btn-danger delete-spice" data-id="{{spice.id}}">Remove</button>
+  </section>
+  <hr>
+
+{{/each}}

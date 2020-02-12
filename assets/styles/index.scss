@@ -1,22 +1,115 @@
 @import '~bootstrap/scss/bootstrap';
-// // // Title
-// h1 {
-//   text-align: justify;
-//   margin-top: 50px;
-//   margin-left: 50px;
-// }
-//
-// header {
-//   margin-top: 10%;
-//   margin-left: 30%;
-//   margin-right: 30%;
-//   padding: 5%;
-//   background: rgb(210, 105, 30);
-//   border-radius: 20px;
-//   border: solid 3px grey;
-// }
+// Title
+h1 {
+  text-align: center;
+  font-size: 75px;
+  // color: rgb(149, 38, 24);
+  text-shadow: 1px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(149, 38, 24), 0 0 5px rgb(242, 210, 166);
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+
+// secondary Tile
+#message {
+  color: rgb(149, 38, 24);
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+// signup and signin
+.pre-auth-forms {
+  color: rgb(149, 38, 24);
+  text-align: center;
+  background-color: rgba(242, 210, 166, 0.9);
+  margin-top: 50px;
+  border-style: ridge;
+  padding: 10px, 10px;
+  border-style: shadow;
+}
+
+//signup section
+#sign-up {
+   margin-bottom: 50px;
+}
 
 
+//signin section
+#sign-in {
+   margin-bottom: 50px;
+}
+
+//signin and signup headers
+h3 {
+  margin-top: 20px;
+}
+
+// changepassword and logout section
 .post-auth-forms {
   display: none;
+}
+
+body {
+  background-color: rgb(226, 154, 55);
+  background-image: url('/spice-it-up.png');
+}
+
+.post-auth-info {
+  color: rgb(149, 38, 24);
+  text-align: center;
+  background-color: rgba(242, 210, 166, 0.9);
+  margin-top: 10px;
+  border-style: ridge;
+  padding: 10px, 10px;
+  border-style: shadow;
+}
+
+h4 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(149, 38, 24), 0 0 5px rgb(242, 210, 166);
+  font-size: 30px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.spice-options {
+  color: rgb(149, 38, 24);
+  text-align: center;
+  background-color: rgba(242, 210, 166, 0.9);
+  margin-top: 10px;
+  border-style: ridge;
+  padding: 10px, 10px;
+  border-style: shadow;
+}
+
+.create-spice {
+  margin-top: 30px;
+  border-style: outset;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.spices {
+  margin-top: 30px;
+}
+
+#spice-display {
+
+}
+
+.delete-spice {
+  margin-top: 30px;
+}
+
+.update-spice {
+  margin-top: 30px;
 }

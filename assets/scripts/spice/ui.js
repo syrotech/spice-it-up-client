@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showSpiceTemplate = require('../templates/spice.handlebars')
 
 // Refactored onSuccess Message for all Requests
 const onSuccess = message => {
@@ -45,7 +46,10 @@ const indexSuccess = function (responseData) {
     // build HTML element with data
     const spiceHTML = (`
       <h4>Name: ${spice.name}</h4>
-      <p>Origin: ${spice.origin}</p>
+      <p>Country of Origin: ${spice.origin}</p>
+      <p>Culinary Use: ${spice.culinary_use}</p>
+      <p>Price: $${spice.price} @ ${spice.weight}/lb</p>
+      <p>ImageURL: ${spice.imageurl}</p>
       <p>ID: ${spice.id}</p>
       <br>
     `)
@@ -53,6 +57,21 @@ const indexSuccess = function (responseData) {
     $('#spice-display').append(spiceHTML)
   })
 }
+
+// const indexSuccess = function (responseData) {
+//   // onSuccess('Here is the spice list!')
+//   // // console.log(responseData)
+//   // // // console.log('data is ' + data)
+//   const spiceHTML = showSpiceTemplate({
+//     spices: responseData.spices
+//   })
+//   onSuccess('Your spice catalog is looking good!')
+//   $('#spice-display').html(spiceHTML)
+//   // $('.country-tracker-bucketlist').show()
+//   // $('.first-create-bucketlist').hide()
+//   // $('.initial-add-button-bucketlist').hide()
+//   // $('.update-tracker-button-bucketlist').show()
+// }
 
 // GET SPICE INDEX FAILURE
 const indexFailure = () => {
