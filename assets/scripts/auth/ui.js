@@ -37,7 +37,7 @@ const onSignUpFailure = () => {
 const onSignInSuccess = responseData => {
   // console.log('onSignInSuccess', responseData)
   store.user = responseData.user
-  onSuccess('You are signed in and ready to shop!')
+  onSuccess('You are signed in and ready to catalog!')
   $('.post-auth-forms').show()
   $('.pre-auth-forms').hide()
 }
