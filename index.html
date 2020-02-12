@@ -63,7 +63,7 @@ take the place of the Sign-up and Sign-in once they are filled in -->
         <input type="text" name="spice[name]" placeholder="Name of Spice">
         <input type="text" name="spice[origin]" placeholder="Country of Origin">
         <input type="text" name="spice[culinary_use]" placeholder="culinary-use">
-        <input type="text" name="spice[image]" placeholder="Imageurl">
+        <input type="text" name="spice[imageurl]" placeholder="Imageurl">
         <input type="text" name="spice[price]" placeholder="Price">
         <input type="text" name="spice[weight]" placeholder="Weight">
       </div>
@@ -117,12 +117,13 @@ take the place of the Sign-up and Sign-in once they are filled in -->
     <form class='spices'>
       <button type="submit" class="btn btn-warning">Get All Spices</button>
     </form>
-
-    <div id="spice-display" col-md-2></div>
+    <div class="container">
+      <div class="row" id="spice-display"></div>
+    </div>
 
     <form class='delete-spice'>
       <div class="form-group">
-        <input type="text" name="spice[id]" placeholder="Delete Resource ID Here">
+        <input type="text" name="spice[id]" placeholder="Delete Spice by ID">
       </div>
       <button type="submit" class="btn btn-warning">Delete Spice</button>
     </form>
@@ -133,9 +134,9 @@ take the place of the Sign-up and Sign-in once they are filled in -->
         <input type="text" name="spice[name]" placeholder="Name">
         <input type="text" name="spice[origin]" placeholder="Origin">
         <input type="text" name="spice[culinary_use]" placeholder="Culinary Use">
-        <input type="text" name="spice[weight]" placeholder="Weight">
         <input type="text" name="spice[price]" placeholder="Price">
-        <input type="text" name="spice[image]" placeholder="Imageurl"
+        <input type="text" name="spice[weight]" placeholder="Weight">
+        <input type="text" name="spice[imageurl]" placeholder="Imageurl">
       </div>
       <button type="submit" class="btn btn-warning">Update Spice</button>
     </form>

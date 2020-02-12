@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const showSpiceTemplate = require('../templates/spice.handlebars')
+// const showSpiceTemplate = require('../templates/spice.handlebars')
 
 // Refactored onSuccess Message for all Requests
 const onSuccess = message => {
@@ -45,18 +45,29 @@ const indexSuccess = function (responseData) {
   responseData.spices.forEach(spice => {
     // build HTML element with data
     const spiceHTML = (`
-      <h4>Name: ${spice.name}</h4>
-      <p>Country of Origin: ${spice.origin}</p>
-      <p>Culinary Use: ${spice.culinary_use}</p>
-      <p>Price: $${spice.price} @ ${spice.weight}/lb</p>
-      <p>ImageURL: ${spice.imageurl}</p>
-      <p>ID: ${spice.id}</p>
-      <br>
+      <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
+        <div class="card" style="width: inherit; margin-top: 10px;">
+          <img class="card-img-top" src="${spice.imageurl}" alt="Image of ${spice.name}">
+          <div class="card-body">
+            <h5 class="card-title">${spice.name} (${spice.id})</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${spice.origin}</h6>
+            <p class="card-text">${spice.culinary_use}</p>
+            <p class="card-text">$${spice.price} @ ${spice.weight}lb</p>
+          </div>
+        </div>
+      </div>
     `)
 
     $('#spice-display').append(spiceHTML)
   })
 }
+
+// <h5>${spice.name}</h5>
+// <p>Country of Origin: ${spice.origin}</p>
+// <p>Culinary Use: ${spice.culinary_use}</p>
+// <p>Price: $${spice.price} @ ${spice.weight}/lb</p>
+// <p>ImageURL: ${spice.imageurl}</p>
+// <p>ID: ${spice.id}</p>
 
 // const indexSuccess = function (responseData) {
 //   // onSuccess('Here is the spice list!')
