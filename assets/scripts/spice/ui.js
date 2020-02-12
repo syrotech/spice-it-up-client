@@ -32,7 +32,6 @@ const createSpiceSuccess = function (formData) {
 // CREATE A SPICE FAILURE
 const createSpiceFailure = () => {
   onFailure('Error-please try again! You must submit at least a name value.')
-  onFailure('Error-please try again! You must submit at least a name value.')
   $('form').trigger('reset')
 }
 
@@ -52,7 +51,8 @@ const indexSuccess = function (responseData) {
             <h5 class="card-title">${spice.name} (${spice.id})</h5>
             <h6 class="card-subtitle mb-2 text-muted">${spice.origin}</h6>
             <p class="card-text">${spice.culinary_use}</p>
-            <p class="card-text">$${spice.price} @ ${spice.weight}lb</p>
+            <p class="card-text">Best Substitutions: ${spice.substitution}</p>
+            <p class="card-text">$${spice.price} @ ${spice.weight} lb</p>
           </div>
         </div>
       </div>
